@@ -1,0 +1,16 @@
+{
+  "name": "backened6",
+  "version": "1.0.0",
+  "description": "a backened on chai aur code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chai",
+    "javascript",
+    "backened"
+  ],
+  "author": "aadi",
+  "license": "ISC"
+}
