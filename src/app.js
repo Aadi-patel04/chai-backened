@@ -21,4 +21,12 @@ app.use(cookieParser());
 
 // app.use(cors())  to configure it
 
+//routes import 
+
+import userRouter from'./routes/user.routes.js'
+
+//router declaration
+
+app.use("/api/v1/users", userRouter)
+
 export { app };
