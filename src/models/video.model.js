@@ -20,7 +20,7 @@ const videoSchema = new Schema(
             required: true
         },
         duration: {
-            type: Number,    //Cloudinary sai milega
+            type: Number,    //Cloudinary sai milegayyyy
             required: true
         },
         views: {

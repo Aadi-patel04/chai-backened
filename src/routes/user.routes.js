@@ -5,18 +5,22 @@ import {upload} from "../middlewares/multer.middleware.js"    //multer middlewar
 
 const router = Router()
 
-router.route("/register").post(upload.fields([
-    {
-        name:"avatar",
-        maxCount:1,
-    },
-    {
-        name:"coverImage",
-        maxCount:1
-    }
-]),
+router.route("/register").post(
+    upload.fields([
+        {
+            name: "avatar",
+            maxCount: 1
+        }, 
+        {
+            name: "coverImage",
+            maxCount: 1
+        }
+    ]),
     registerUser
-)
+    )
+ 
+
+    //router.route("/login").post(login)  // https://localhost:8000/users/login
 
 
 export default router

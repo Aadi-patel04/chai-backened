@@ -8,7 +8,7 @@ import{app} from './app.js'
 
 
 dotenv.config({
-    path: './env'
+    path: './.env'
 })
 
 connectDB()
@@ -31,8 +31,10 @@ connectDB()
 
 
 
+//1) Database connection Directly through index file ---->
 
-/*import express from "express"
+/*import mongoose from "mongoose";
+import express from "express"
 
 const app=express()
 
