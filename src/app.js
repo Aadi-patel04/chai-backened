@@ -4,6 +4,8 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
+// app.use(cors()) simpy   to configure it
+
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN, // konsa domain can acess your server
@@ -15,11 +17,9 @@ app.use(express.json({ limit: "16kb" })); // form bharne pai agar data le too
 
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 
-app.use(express.static("pulic"));
+app.use(express.static("public"));
 
 app.use(cookieParser());
-
-// app.use(cors())  to configure it
 
 //routes import 
 

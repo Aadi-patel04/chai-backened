@@ -1,16 +1,16 @@
 import { Router } from "express";
-import { registerUser, loginUser, logoutUser} from "../controllers/user.controller.js";
+import { registerUser, loginUser, logoutUser, refreshAccessToken } from "../controllers/user.controller.js";
 
 import {upload} from "../middlewares/multer.middleware.js"    //multer middleware
-import { verifyJWt } from "../middlewares/auth.middleware.js";
+import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 const router = Router()
 
 router.route("/register").post(
-    upload.fields([
+    upload.fields([            //multer midlleware upload
         {
             name: "avatar",
-            maxCount: 1
+            maxCount: 1                   
         }, 
         {
             name: "coverImage",
@@ -20,12 +20,17 @@ router.route("/register").post(
     registerUser
     )
 
+//Login Router
+
 router.route("/login").post(loginUser)
- 
 
     //router.route("/login").post(login)  // https://localhost:8000/users/login
 
-router.route("logout").post(verifyJWt, logoutUser)
+//secured route
+
+router.route("/logout").post(verifyJWT, logoutUser)
+router.route("/refresh-token").post(refreshAccessToken)
+
 
 
 export default router
